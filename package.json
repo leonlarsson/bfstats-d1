@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@cloudflare/d1": "^1.4.1",
+    "wrangler": "^0.0.0-63cc1693"
+  }
+}
