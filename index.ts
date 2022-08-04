@@ -41,7 +41,8 @@ export default {
                 }
 
             } else if (request.method === "GET") {
-                const { results } = await env.DB.prepare("SELECT * FROM users").all();
+                const query = request.headers.get("D1-Query");
+                const { results } = await env.DB.prepare(query ?? "SELECT * FROM users").all();
                 return new Response(JSON.stringify(results), { headers: { "Content-Type": "application/json" } });
             }
         }
