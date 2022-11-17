@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "@cloudflare/d1": "^1.4.1",
-    "wrangler": "^0.0.0-63cc1693"
+    "@cloudflare/workers-types": "^3.18.0"
   }
 }

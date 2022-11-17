@@ -1,7 +1,7 @@
 name = "bfstats-d1"
-compatibility_date = "2022-08-04"
+compatibility_date = "2022-11-17"
 main = "./index.ts"
 
 d1_databases = [
-    { binding = "DB", database_name = "bfstats", database_id = "479c484b-1b30-4c87-a8be-65c24f63109c", preview_database_id = "479c484b-1b30-4c87-a8be-65c24f63109c" }
+    { binding = "DB", database_name = "bfstats", database_id = "668d0e1f-b01a-4048-8796-fdf4530fb192", preview_database_id = "668d0e1f-b01a-4048-8796-fdf4530fb192" }
 ]
