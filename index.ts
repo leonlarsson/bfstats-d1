@@ -24,10 +24,10 @@ export default {
                         // Insert a new user. If there is a conflict (user_id already exists), then update the existing row
                         await env.DB.prepare(`
                         INSERT INTO users (user_id, username, last_stats_sent, last_language, total_stats_sent) 
-                        VALUES ("${userId}", "${username}", ${new Date().getTime()}, "${language}", 1) 
-                        ON CONFLICT (user_id) DO UPDATE SET username = "${username}", last_stats_sent = ${new Date().getTime()}, last_language = "${language}", total_stats_sent = total_stats_sent + 1 
-                        WHERE user_id = "${userId}"
-                        `).run();
+                        VALUES (?1, ?2, ?3, ?4, 1) 
+                        ON CONFLICT (user_id) DO UPDATE SET username = ?2, last_stats_sent = ?3, last_language = ?4, total_stats_sent = total_stats_sent + 1 
+                        WHERE user_id = ?1
+                        `).bind(userId, username, new Date().getTime(), language).run();
 
                         return new Response("POST /d1/users OK");
 
